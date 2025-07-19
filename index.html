@@ -81,6 +81,60 @@
         .text-white {
             color: white !important;
         }
+        .history-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+            transition: all 0.3s ease;
+        }
+        .history-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+            color: white;
+        }
+        .transaction-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .transaction-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .transaction-amount {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .transaction-time {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 20px;
+        }
+        .modal-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .modal-title {
+            color: white;
+        }
+        .btn-close {
+            filter: brightness(0) invert(1);
+        }
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .time-unit {
@@ -94,10 +148,21 @@
             .time-label {
                 font-size: 0.8rem;
             }
+            .history-btn {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- History Button -->
+    <button class="btn history-btn" data-bs-toggle="modal" data-bs-target="#historyModal">
+        <i class="fas fa-history me-2"></i>Lịch sử giao dịch
+    </button>
+
     <div class="main-container">
         <div class="container">
             <div class="row justify-content-center">
@@ -105,17 +170,16 @@
                     <div class="card">
                         <div class="card-body p-5">
                             <div class="text-center mb-4">
-                                <h1 class="text-white mb-3">
-
-                                <p class="text-white-50 lead ">Vui lòng bank vài tài khoản này trước 11:00 20/7/2025 nếu không sẽ đăng tải tin này lên trang Facebook!
-                            <img src="images/7f6a4a99-ccb9-4b60-ba19-87c811fd0e7e.jpeg" alt="mo_ta_anh" width="50%" height="25%">
+                                <h1 class="text-white mb-3"></h1>
+                                <p class="text-white-50 lead">Vui lòng bank vào tài khoản này trước 11:00 20/8/2025 nếu không sẽ đăng tải tin này lên trang Facebook!
+                                <img src="images/7f6a4a99-ccb9-4b60-ba19-87c811fd0e7e.jpeg" alt="mo_ta_anh" width="50%" height="25%">
                                 </div>
 
                             <!-- Countdown Timer -->
                             <div class="countdown-display text-center" id="countdownDisplay">
                                 <h3 class="text-dark mb-3">
                                     <i class="fas fa-clock me-2"></i>
-                                    Thời gian còn lại đến 11h tối ngày 20/7/2025
+                                    Thời gian còn lại đến 11h tối ngày 20/8/2025
                                 </h3>
                                 <div id="countdown">
                                     <div class="time-unit">
@@ -141,8 +205,7 @@
                             <div class="image-placeholder">
                                 <i class="text-dark">Có nợ mà không trả thích hẹn dây dưa , lúc mượn thì nhanh lẹ lắm lúc trả thì hẹn lên hẹn xuống dắt như gì , ae chú ý ạ !</i>
                                 <div class="placeholder-text">
-                                   <img src="images/phap.png" alt="mo_ta_anh" width="100%" height="50%">
-
+                                   <img src="images/Ảnh màn hình 2025-07-19 lúc 00.10.10.png" alt="mo_ta_anh" width="100%" height="50%">
                                 </div>
                             </div>
 
@@ -153,11 +216,65 @@
         </div>
     </div>
 
+    <!-- History Modal -->
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historyModalLabel">
+                        <i class="fas fa-history me-2"></i>Lịch sử giao dịch ngày 19/7/2025
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="transaction-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="transaction-amount">+500,000 VND</div>
+                                <div class="text-white">Chuyển khoản từ NGUYEN VAN TONG</div>
+                                <div class="transaction-time">10:28 - 19/07/2025</div>
+                            </div>
+                            <div class="text-success">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="transaction-amount">+500,000 VND</div>
+                                <div class="text-white">Chuyển khoản từ NGUYEN VAN TONG</div>
+                                <div class="transaction-time">10:52 - 19/07/2025</div>
+                            </div>
+                            <div class="text-success">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                    <hr style="border-color: rgba(255,255,255,0.2);">
+                    <div class="text-center">
+                        <div class="text-white-50">Tổng giao dịch trong ngày</div>
+                        <div class="transaction-amount" style="font-size: 1.5rem;">+1,000,000 VND</div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.2);">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Đóng
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         // Countdown Timer
         function updateCountdown() {
-            const targetDate = new Date('2025-07-20T23:00:00+07:00'); // 11h tối ngày 20/7/2025 (GMT+7)
+            const targetDate = new Date('2025-08-20T23:00:00+07:00'); // 11h tối ngày 20/8/2025 (GMT+7)
             const now = new Date();
             const timeLeft = targetDate.getTime() - now.getTime();
 
@@ -192,6 +309,26 @@
                 unit.style.transform = 'scale(1)';
             });
         });
+
+        // Add animation to history button
+        const historyBtn = document.querySelector('.history-btn');
+        setInterval(() => {
+            historyBtn.style.animation = 'pulse 1s ease-in-out';
+            setTimeout(() => {
+                historyBtn.style.animation = '';
+            }, 1000);
+        }, 5000);
+
+        // Add CSS for pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
