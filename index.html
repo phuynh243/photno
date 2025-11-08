@@ -171,7 +171,7 @@
                         <div class="card-body p-5">
                             <div class="text-center mb-4">
                                 <h1 class="text-white mb-3"></h1>
-                                <p class="text-white-50 lead">Vui lòng bank vào tài khoản này trước 11:00 20/10/2025 nếu không sẽ đăng tải tin này lên trang Facebook!
+                                <p class="text-white-50 lead">Vui lòng bank vào tài khoản này trước 11:00 20/11/2025 nếu không sẽ đăng tải tin này lên trang Facebook!
                                 <img src="images/7f6a4a99-ccb9-4b60-ba19-87c811fd0e7e.jpeg" alt="mo_ta_anh" width="50%" height="25%">
                                 </div>
 
@@ -292,43 +292,43 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const targetDate = new Date('2025-10-30T11:00:00+07:00'); // 11h sáng ngày 20/10/2025 (GMT+7)
-            const now = new Date();
-            const timeLeft = targetDate.getTime() - now.getTime();
+    // Countdown Timer
+function updateCountdown() {
+    const targetDate = new Date('2025-11-20T11:00:00+07:00'); // 11h sáng ngày 20/11/2025 (GMT+7)
+    const now = new Date();
+    const timeLeft = targetDate.getTime() - now.getTime();
 
-            if (timeLeft > 0) {
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            } else {
-                document.getElementById('countdown').innerHTML = 
-                    '<div class="time-unit" style="background: linear-gradient(135deg, #28a745, #20c997); min-width: 200px;"><span class="time-number">HẾT GIỜ!</span></div>';
-            }
-        }
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    } else {
+        document.getElementById('countdown').innerHTML = 
+            '<div class="time-unit" style="background: linear-gradient(135deg, #28a745, #20c997); min-width: 200px;"><span class="time-number">HẾT GIỜ!</span></div>';
+    }
+}
 
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+// Update countdown every second
+setInterval(updateCountdown, 1000);
+updateCountdown(); // Initial call
 
-        // Add some interactive effects
-        document.querySelectorAll('.time-unit').forEach(unit => {
-            unit.addEventListener('mouseenter', () => {
-                unit.style.transform = 'scale(1.1)';
-                unit.style.transition = 'transform 0.3s ease';
-            });
-            
-            unit.addEventListener('mouseleave', () => {
-                unit.style.transform = 'scale(1)';
-            });
-        });
+// Add some interactive effects
+document.querySelectorAll('.time-unit').forEach(unit => {
+    unit.addEventListener('mouseenter', () => {
+        unit.style.transform = 'scale(1.1)';
+        unit.style.transition = 'transform 0.3s ease';
+    });
+    
+    unit.addEventListener('mouseleave', () => {
+        unit.style.transform = 'scale(1)';
+    });
+});
 
         // Add animation to history button
         const historyBtn = document.querySelector('.history-btn');
