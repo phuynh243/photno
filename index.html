@@ -293,8 +293,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
     // Countdown Timer
+// Countdown Timer
 function updateCountdown() {
-    const targetDate = new Date('2025-11-20T11:00:00+07:00'); // 11h sáng ngày 20/11/2025 (GMT+7)
+    const targetDate = new Date('2025-12-20T11:00:00+07:00'); // 11h sáng ngày 20/12/2025 (GMT+7)
     const now = new Date();
     const timeLeft = targetDate.getTime() - now.getTime();
 
@@ -313,6 +314,7 @@ function updateCountdown() {
             '<div class="time-unit" style="background: linear-gradient(135deg, #28a745, #20c997); min-width: 200px;"><span class="time-number">HẾT GIỜ!</span></div>';
     }
 }
+
 
 // Update countdown every second
 setInterval(updateCountdown, 1000);
